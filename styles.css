@@ -45,3 +45,15 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.firewall {
+    background-color: #ff4136; /* Red for firewall */
+}
+
+.antivirus {
+    background-color: #0074D9; /* Blue for antivirus */
+}
+
+.occupied {
+    color: white; /* White text on colored backgrounds */
+}
