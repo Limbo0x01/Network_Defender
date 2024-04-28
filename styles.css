@@ -1,0 +1,42 @@
+body {
+    font-family: 'Consolas', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    color: #0f0; /* Cyber green text */
+    margin: 0;
+}
+
+.game-container {
+    width: 600px;
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    border: 2px solid #0f0;
+    border-radius: 10px;
+}
+
+#puzzleContainer, #hintContainer {
+    margin-top: 20px;
+}
+
+input[type="text"], button {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: #444;
+    color: #0f0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+

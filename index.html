@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Detective</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Cyber Detective</h1>
+        <div id="storyLine">
+            <p id="storyText">Your mission is to track down and stop the cyber threats. Good luck, detective!</p>
+        </div>
+        <div id="puzzleContainer">
+            <p id="puzzleText"></p>
+            <input type="text" id="userInput" placeholder="Enter your answer here">
+            <button onclick="submitAnswer()">Submit</button>
+        </div>
+        <div id="hintContainer">
+            <button onclick="showHint()">Get a Hint</button>
+            <p id="hintText"></p>
+        </div>
+        <p id="feedback"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
