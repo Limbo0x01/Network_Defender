@@ -1,35 +1,45 @@
-const puzzles = [
-    { question: "Decrypt this message: VGUVDG", answer: "THREAT", hint: "Use a simple Caesar cipher (shift by -2)." },
-    { question: "What is the missing number in the sequence: 2, 3, 5, 7, __?", answer: "11", hint: "These are prime numbers." }
-];
-let currentPuzzle = 0;
+const grid = document.getElementById('networkGrid');
+const creditsDisplay = document.getElementById('credits');
+let credits = 100;
 
-function submitAnswer() {
-    const userAnswer = document.getElementById('userInput').value.toUpperCase();
-    if (userAnswer === puzzles[currentPuzzle].answer) {
-        document.getElementById('feedback').textContent = 'Correct! On to the next challenge.';
-        currentPuzzle++;
-        if (currentPuzzle < puzzles.length) {
-            displayPuzzle();
-        } else {
-            document.getElementById('storyText').textContent = 'Congratulations, you have prevented the cyber attack!';
-            document.getElementById('puzzleContainer').style.display = 'none';
-            document.getElementById('hintContainer').style.display = 'none';
-        }
-    } else {
-        document.getElementById('feedback').textContent = 'Incorrect, try again!';
+function setupGrid() {
+    for (let i = 0; i < 100; i++) {
+        const node = document.createElement('div');
+        node.className = 'networkNode';
+        node.onclick = () => placeDefense(i);
+        grid.appendChild(node);
     }
 }
 
-function showHint() {
-    document.getElementById('hintText').textContent = puzzles[currentPuzzle].hint;
+function buyFirewall() {
+    if (credits >= 50) {
+        credits -= 50;
+        updateCredits();
+        // Additional logic to enable placing a firewall
+        alert('Firewall purchased! Click on a node to place it.');
+    } else {
+        alert('Not enough credits!');
+    }
 }
 
-function displayPuzzle() {
-    document.getElementById('puzzleText').textContent = puzzles[currentPuzzle].question;
-    document.getElementById('userInput').value = '';
-    document.getElementById('hintText').textContent = '';
+function buyAntivirus() {
+    if (credits >= 75) {
+        credits -= 75;
+        updateCredits();
+        // Additional logic to enable placing an antivirus
+        alert('Antivirus purchased! Click on a node to place it.');
+    } else {
+        alert('Not enough credits!');
+    }
 }
 
-window.onload = displayPuzzle;
+function placeDefense(index) {
+    // Logic to place defenses on the network grid
+    console.log(`Defense placed at position ${index}`);
+}
 
+function updateCredits() {
+    creditsDisplay.textContent = credits;
+}
+
+window.onload = setupGrid;
